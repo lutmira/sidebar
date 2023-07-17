@@ -1,5 +1,9 @@
 import React from "react";
-import ReadingMask from "./reading_mask";
+//Custom Components
+import Cursor from "./cursor_card";
+import BiggerTexting from "./bigger_texting_card";
+import HeavySpacing from "./heavy_spacing_card";
+import HighlightLinks from "./highlight_links_card";
 
 interface SiderConfig {
   content: JSX.Element;
@@ -7,27 +11,15 @@ interface SiderConfig {
 
 export const cardConfigs: SiderConfig[] = [
   {
-    content: <ReadingMask/>
+    content: <BiggerTexting/>
   },
   {
-    content: <ReadingMask/>
+    content: <Cursor/>
   },
   {
-    content: <ReadingMask/>
+    content: <HeavySpacing/>
   },
   {
-    content: <ReadingMask/>
-  },
-  {
-    content: <ReadingMask/>
-  },
-  {
-    content: <ReadingMask/>
-  },
-  {
-    content: <ReadingMask/>
-  },
-  {
-    content: <ReadingMask/>
-  },
+    content: <HighlightLinks/>
+  }
 ];
