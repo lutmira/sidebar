@@ -16,7 +16,7 @@ const
       zIndex: zIndex,
       width: '100%',
       position: 'fixed',
-    }), [])
+    }), [zIndex])
     return (
       <>
         <div style={{
