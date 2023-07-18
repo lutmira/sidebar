@@ -27,7 +27,10 @@ const CustomCard: React.FC<CustomCardProps> = ({ title, content, onClick, isClic
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
       onClick={handleClick}
-      style={{ border: isHovered ? '2px solid #364d79' : 'none' }}
+      style={{
+        cursor: "pointer",
+        border: isHovered ? '2px solid #364d79' : 'none'
+      }}
     >
       <>
         {isClicked && (
