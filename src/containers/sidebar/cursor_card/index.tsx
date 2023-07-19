@@ -3,16 +3,14 @@ import React, {useState} from 'react';
 import ReadingMask from "./reading_mask";
 //Custom Styles
 import '../../../styles/index.css'
-//Components
-import {Carousel} from "antd";
 
 const Cursor = () => {
   const [clickCount, setClickCount] = useState(1);
 
-  const handleClick = () => {
-    setClickCount(prevCount => prevCount + 1);
-    console.log('here')
-  };
+  // const handleClick = () => {
+  //   setClickCount(prevCount => prevCount + 1);
+  //   console.log('here')
+  // };
 
   const renderCursor = () => {
     if (clickCount === 1)
@@ -26,9 +24,9 @@ const Cursor = () => {
 
 
   return (
-    <Carousel afterChange={handleClick}>
+    <div>
       {renderCursor()}
-    </Carousel>
+    </div>
   );
 };
 
