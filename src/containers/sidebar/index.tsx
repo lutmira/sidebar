@@ -65,9 +65,9 @@ const SideBar: React.FC<SideBarProps> = ({ isSiderVisible, toggleSideBar }) => {
               <Col xs={12} key={index}>
                 <CustomCard
                   title={config.title}
-                  content={config.content}
+                  children={config.content}
+                  active={index === selectedCard}
                   onClick={() => handleCardClick(index)}
-                  isClicked={index === selectedCard}
                 />
               </Col>
             ))}

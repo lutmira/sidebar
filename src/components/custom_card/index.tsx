@@ -1,18 +1,18 @@
-import React, {ReactNode, useState} from 'react';
-//Components
-import {Card, Col, Row} from 'antd';
-//Icons
-import {CheckCircleOutlined} from '@ant-design/icons';
+import React, { ReactNode } from 'react';
+// Components
+import { Card, Col, Row } from 'antd';
+// Icons
+import { CheckCircleOutlined } from '@ant-design/icons';
 
 interface CustomCardProps {
   title: string;
-  content: ReactNode;
+  children: ReactNode;
   onClick: () => void;
-  isClicked: boolean;
+  active: boolean
 }
 
-const CustomCard: React.FC<CustomCardProps> = ({ title, content, onClick, isClicked }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const CustomCard: React.FC<CustomCardProps> = ({ title, children, onClick, active }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const handleHover = (isHovered: boolean) => {
     setIsHovered(isHovered);
@@ -28,12 +28,12 @@ const CustomCard: React.FC<CustomCardProps> = ({ title, content, onClick, isClic
       onMouseLeave={() => handleHover(false)}
       onClick={handleClick}
       style={{
-        cursor: "pointer",
-        border: isHovered ? '2px solid #364d79' : 'none'
+        cursor: 'pointer',
+        border: isHovered ? '2px solid #364d79' : 'none',
       }}
     >
       <>
-        {isClicked && (
+        {active && (
           <div
             style={{
               position: 'absolute',
@@ -46,7 +46,7 @@ const CustomCard: React.FC<CustomCardProps> = ({ title, content, onClick, isClic
         )}
         <Row gutter={[16, 16]}>
           <Col xs={24}>{title}</Col>
-          <Col xs={24}>{content}</Col>
+          <Col xs={24}>{children}</Col>
         </Row>
       </>
     </Card>
