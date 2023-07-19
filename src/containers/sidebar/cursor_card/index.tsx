@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 // Custom Components
 import ReadingMask from './reading_mask';
 // Custom Styles
 import '../../../styles/index.css';
+import {CustomCard} from "../../../components";
 
-interface CursorProps {
-  handleCardClick: () => void;
-}
-const Cursor : React.FC<CursorProps> = ({ handleCardClick }) => {
+const Cursor  = () => {
   const [clickCount, setClickCount] = useState<number>(0);
 
   const handleClick = () : void => {
@@ -15,7 +13,7 @@ const Cursor : React.FC<CursorProps> = ({ handleCardClick }) => {
   };
 
   const renderCursor = () => {
-    if (clickCount % 3 === 0) {
+    if (clickCount  === 0) {
       return <div className="zoom-in-cursor" />;
     } else if (clickCount % 3  === 1) {
       return <ReadingMask />;
@@ -25,9 +23,12 @@ const Cursor : React.FC<CursorProps> = ({ handleCardClick }) => {
   };
 
   return (
-    <div onClick={handleClick}>
-      {renderCursor()}
-    </div>
+    <CustomCard
+      title='Cursor'
+      active={clickCount!==0}
+      onClick={handleClick}
+      children={renderCursor()}
+    />
   );
 };
 

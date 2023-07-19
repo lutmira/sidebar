@@ -1,10 +1,15 @@
 import React from 'react';
+//Custom Components
+import {CustomCard} from "../../../components";
 
 const HighlightLinks = () => {
   return (
-    <div>
-
-    </div>
+    <CustomCard
+      title={''}
+      active={true}
+      onClick={()=>{}}
+      children={<></>}
+    />
   );
 };
 

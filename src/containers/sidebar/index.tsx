@@ -8,9 +8,6 @@ import {cardConfigs} from "../config";
 import {CheckCircleOutlined, CloseCircleOutlined} from "@ant-design/icons";
 //Custom Styles
 import '../../styles/index.css'
-//Custom Components
-import {CustomCard} from "../../components";
-
 
 interface SideBarProps {
   isSiderVisible: boolean;
@@ -19,14 +16,9 @@ interface SideBarProps {
 
 const SideBar: React.FC<SideBarProps> = ({ isSiderVisible, toggleSideBar }) => {
   const [isSideBarLarge, setIsSideBarLarge] = useState<boolean>(true);
-  const [selectedCard, setSelectedCard] = useState<number | null>(null);
 
   const handleToggleWidth = (): void => {
     setIsSideBarLarge((prevState) => !prevState);
-  };
-
-  const handleCardClick = (cardId: number): void => {
-    setSelectedCard(cardId === selectedCard ? null : cardId);
   };
 
   const sidebarWidth = isSideBarLarge ? 400 : 600;
@@ -63,12 +55,7 @@ const SideBar: React.FC<SideBarProps> = ({ isSiderVisible, toggleSideBar }) => {
           <Row gutter={[16, 16]}>
             {cardConfigs.map((config, index) => (
               <Col xs={12} key={index}>
-                <CustomCard
-                  title={config.title}
-                  children={config.content}
-                  active={index === selectedCard}
-                  onClick={() => handleCardClick(index)}
-                />
+                {config.content}
               </Col>
             ))}
           </Row>

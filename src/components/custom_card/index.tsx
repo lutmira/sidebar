@@ -6,9 +6,9 @@ import { CheckCircleOutlined } from '@ant-design/icons';
 
 interface CustomCardProps {
   title: string;
+  active: boolean
   children: ReactNode;
   onClick: () => void;
-  active: boolean
 }
 
 const CustomCard: React.FC<CustomCardProps> = ({ title, children, onClick, active }) => {
