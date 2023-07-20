@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-// Custom Components
-import ReadingMask from './reading_mask';
 // Custom Styles
 import '../../../styles/index.css';
+//Custom Components
+import ReadingMask from './reading_mask';
+import CustomCursor from "./custom_cursor";
 import {CustomCard} from "../../../components";
 
 const Cursor  = () => {
@@ -13,22 +14,20 @@ const Cursor  = () => {
   };
 
   const renderCursor = () => {
-    if (clickCount  === 0) {
-      return <div className="zoom-in-cursor" />;
-    } else if (clickCount % 3  === 1) {
+    if (clickCount  % 3 === 1) {
+      return <CustomCursor cursorType="bigger"/>;
+    } else if (clickCount % 3 === 2) {
       return <ReadingMask />;
     } else {
-      return <div className="custom-cursor" />;
+      return <CustomCursor cursorType="regular"/>;
     }
   };
 
   return (
-    <CustomCard
-      title='Cursor'
-      active={clickCount!==0}
-      onClick={handleClick}
-      children={renderCursor()}
-    />
+    <>
+      <CustomCard title="Cursor" active={clickCount !== 0} onClick={handleClick}>{<></>}</CustomCard>
+      <div>{renderCursor()}</div>
+    </>
   );
 };
 
