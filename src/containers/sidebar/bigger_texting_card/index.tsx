@@ -5,7 +5,7 @@ import {CustomCard} from "../../../components";
 const BiggerTexting = () => {
   return (
     <CustomCard
-      title={''}
+      title={'BiggerTexting'}
       active={true}
       onClick={()=>{}}
       children={<></>}

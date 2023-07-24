@@ -44,19 +44,6 @@ body {
     left: 0;
 }
 
-.custom-cursor {
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    position: fixed;
-    cursor: pointer;
-}
-
-.zoom-in-cursor {
-    cursor: default;
-    font-size: 150%;
-}
-
 .carousel {
     margin: 0;
     height: 160px;

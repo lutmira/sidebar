@@ -5,7 +5,7 @@ import {CustomCard} from "../../../components";
 const HighlightLinks = () => {
   return (
     <CustomCard
-      title={''}
+      title={'HighlightLinks'}
       active={true}
       onClick={()=>{}}
       children={<></>}

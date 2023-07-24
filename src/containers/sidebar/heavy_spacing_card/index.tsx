@@ -5,7 +5,7 @@ import {CustomCard} from "../../../components";
 const HeavySpacing = () => {
   return (
     <CustomCard
-      title={''}
+      title={'HeavySpacing'}
       active={true}
       onClick={()=>{}}
       children={<></>}
